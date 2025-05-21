@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{dd5a5463-d6d1-4481-a7b6-ab694896a382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\fonts">
+      <UniqueIdentifier>{aefd6e0c-a76e-4253-8c2a-c862edeea7ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{c2bc3564-aefe-4fec-beb6-cfa2c59c6d54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures\sandbox_choice_state">
+      <UniqueIdentifier>{3f12d35b-0844-4038-aaf0-857b54f53aab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SandboxApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SandboxError.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cfg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SandboxChoiceState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SideScrollerState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SandboxApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SandboxError.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripted.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFEventSensitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFInputSensitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GStateType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SandboxChoiceState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SideScrollerState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IKinematics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="invariant.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\energy.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\Item_1.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\item_2.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\item_3.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\missile.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\planet_1.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\planet_2.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\planet_3.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\planet_4.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\planet_5.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\planet_6.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship_1.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship_2.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship_3.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship_4.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship_5.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship_6.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\shot.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\Space Ships Explosion.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\turbo_blue.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\turbo_green.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\ship.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\fonts\Crusty.ttf">
+      <Filter>assets\fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>

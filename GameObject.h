@@ -6,7 +6,7 @@
 class GameObject : public sf::Sprite
 {
 	float maxVel{ 400.f };
-	float minVel{ -400.f };
+	
 
 	Cfg::Textures mTexID;
 
@@ -82,13 +82,13 @@ public:
 		}
 
 
-		if (tmpVel.x < minVel)
+		if (tmpVel.x < -maxVel)
 		{
-			tmpVel.x = minVel;
+			tmpVel.x = -maxVel;
 		}
-		if (tmpVel.y < minVel)
+		if (tmpVel.y < -maxVel)
 		{
-			tmpVel.y = minVel;
+			tmpVel.y = -maxVel;
 		}
 
 		//if (fabsf(mVel.x) < 0.001f) mVel.x = 0.0f;
@@ -101,13 +101,6 @@ public:
 		mPos = pt;
 		mPrevVel = mVel;
 		mVel = tmpVel;
-
-		
-		std::cout << "\npos:" << mPos.x << "," << mPos.y;
-
-		std::cout << "\nvel:" << mVel.x << "," << mVel.y;
-
-		std::cout << "\nacc:" << mAccel.x << "," << mAccel.y << std::endl;
 
 
 		
@@ -135,12 +128,15 @@ public:
 	bool isVisible();
 	bool isAlive();
 	virtual sf::Vector2f getPos();
+	
 	virtual sf::Vector2f getOff();
 	virtual sf::Vector2f getVel();
 	virtual Cfg::Textures getTexID();
 	virtual sf::IntRect getRect();
 	virtual sf::Vector2f getSize();
 
+	inline sf::Vector2f getPrevPos() { return mPrevPos; }
+	inline sf::Vector2f getPrevVel() { return mPrevVel; }
 
 };
 

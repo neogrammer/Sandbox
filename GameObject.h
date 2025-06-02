@@ -102,7 +102,6 @@ public:
 		mPrevVel = mVel;
 		mVel = tmpVel;
 
-<<<<<<< HEAD
 		
 		/*std::cout << "\npos:" << mPos.x << "," << mPos.y;
 
@@ -110,8 +109,6 @@ public:
 
 		std::cout << "\nacc:" << mAccel.x << "," << mAccel.y << std::endl;*/
 
-=======
->>>>>>> 0ba6844c3be707589ae6566a3b3a07ac223dac39
 
 		
 		//setPos(mPos);

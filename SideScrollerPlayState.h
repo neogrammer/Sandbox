@@ -12,8 +12,16 @@ public:
     ~SideScrollerPlayState();
 
     void load();
-    void update(float dt);
-    void draw(sf::RenderWindow& window);
+    void update(sf::RenderWindow& window, float dt) override;
+   
+	void handleInput(float dt_) override;
+	void handleEvent(const std::optional<sf::Event>& evt_) override;
+	void handleCollisions() override;
+	void animate() override;
+	void render(sf::RenderWindow& tv_) override;
+
+	void tickBegin() override;
+	void tickEnd(float dt_) override;
 
 private:
     std::vector<BackgroundLayer> _backgroundLayers;

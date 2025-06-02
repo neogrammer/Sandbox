@@ -9,7 +9,9 @@ enum class GStateType
 	SandboxIsometric,
 	SandboxSideScroller,
 	SandboxSideScrollerPlay,
-	SandboxStarShooter
+	SandboxStarShooter,
+	SandboxStarShooterPlay,
+	None
 };
 
 #endif

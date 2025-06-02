@@ -2,10 +2,11 @@
 
 void SandboxChoiceState::handleInput(float dt_)
 {
-
+    bool enterPressed = false;
     
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
         {
+            enterPressed = true;
           
                 currFaceIdx = FaceType::Triggered;
                 face.setTexture(Cfg::textures.get(Cfg::Textures::MyFaceTriggered));
@@ -16,6 +17,19 @@ void SandboxChoiceState::handleInput(float dt_)
         {
             currFaceIdx = FaceType::Untriggered;
             face.setTexture(Cfg::textures.get(Cfg::Textures::MyFaceUntriggered));
+        }
+
+        if (enterPressed)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+            {
+                if (currOpt == 0)
+                    switchGState(GStateType::SandboxStarShooter);
+                else if (currOpt == 1)
+                    switchGState(GStateType::SandboxSideScroller);
+                
+
+            }
         }
     
 
@@ -64,6 +78,18 @@ void SandboxChoiceState::handleInput(float dt_)
 
 void SandboxChoiceState::handleEvent(const std::optional<sf::Event>& evt_)
 {
+
+        if (const auto* keyPressed = evt_->getIf<sf::Event::KeyReleased>())
+        {
+            if (keyPressed->scancode == sf::Keyboard::Scancode::Enter)
+            {
+                if (currOpt == 2)
+                {
+                    closing = true;
+                }
+
+            }
+        }
 }
 
 void SandboxChoiceState::handleCollisions()

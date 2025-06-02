@@ -9,11 +9,14 @@ class GameState
 	GStateType mType;
 
 	GStateType mPendingType;
+
+
+
 protected:
 	sf::View mainView;
 	sf::View guiView;
 
-
+	bool closing{ false };
 
 public:
 	GameState(GStateType type_, sf::RenderWindow& tv_) : mType{ type_ }, mPendingType{ type_ }, mainView{ tv_.getDefaultView() }, guiView{ tv_.getDefaultView() } {}
@@ -24,6 +27,7 @@ public:
 	GStateType getPendingType()
 	{
 		auto type = mPendingType;
+		if (type == GStateType::None) { return GStateType::None; }
 		mPendingType = mType;
 		return type;
 	}
@@ -31,6 +35,8 @@ public:
 	{
 		mPendingType = type_;
 	}
+
+	void resetPending(); 
 
 	virtual void handleInput(float dt_) = 0;
 	virtual void handleEvent(const std::optional<sf::Event>& evt_) = 0;
@@ -41,6 +47,9 @@ public:
 
 	virtual void tickBegin()=0;
 	virtual void tickEnd(float dt_)=0;
+
+	bool isClosing();
+
 };
 
 #endif

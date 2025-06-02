@@ -15,7 +15,13 @@ void SandboxApp::updateFrame()
         }
         // for each currentObjects -> dynamic_cast<Interface SFEventSensitive> -> currObj.processEvent(sf::Event);
         mCurrGState->handleEvent(event);
+        mGameRunning = !mCurrGState->isClosing();
+      }
+    if (!mGameRunning) 
+    {
+        return; 
     }
+
     mCurrGState->tickBegin();
     float dt = mTimer.restart().asSeconds();
 
@@ -64,8 +70,17 @@ void SandboxApp::run()
     while (mTV.isOpen() && mGameRunning)
     {
         if (mCurrGState->isPendingSwitch())
-            mCurrGState = gStates[mCurrGState->getPendingType()];
+        {
+            auto t = mCurrGState->getPendingType();
+            if (t != GStateType::None)
+                mCurrGState = gStates[t];
+        }
+        else        
+        {
+            mCurrGState->resetPending();
+        }
         updateFrame();
+        if (!mGameRunning) { continue; }
         render();
     }
     if (mTV.isOpen())

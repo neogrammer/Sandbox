@@ -1,6 +1,7 @@
 
 // PlayState.cpp
 #include "SideScrollerPlayState.h"
+#include "Cfg.h"
 
 SideScrollerPlayState::SideScrollerPlayState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ } {}
 
@@ -20,14 +21,48 @@ void SideScrollerPlayState::load() {
     // Add more layers as needed
 }
 
-void SideScrollerPlayState::update(float dt) {
+void SideScrollerPlayState::update(sf::RenderWindow& window, float dt) {
     for (auto& layer : _backgroundLayers) {
         layer.update(dt);
     }
 }
 
-void SideScrollerPlayState::draw(sf::RenderWindow& window) {
+void SideScrollerPlayState::render(sf::RenderWindow& window) {
     for (auto& layer : _backgroundLayers) {
         layer.draw(window);
     }
+
+    sf::Text txt{ Cfg::fonts.get(Cfg::Fonts::SandboxChoiceStateFont) };
+    txt.setString("PlayState for Crashers");
+    txt.setPosition({ 100.f,100.f });
+    txt.setCharacterSize(36U);
+    txt.setFillColor(sf::Color::White);
+
+    window.draw(txt);
+
 }
+
+
+void SideScrollerPlayState::handleCollisions()
+{
+}
+
+void SideScrollerPlayState::animate()
+{
+}
+
+void SideScrollerPlayState::handleInput(float dt_)
+{
+}
+
+void SideScrollerPlayState::handleEvent(const std::optional<sf::Event>& evt_)
+{
+}
+
+void SideScrollerPlayState::tickBegin()
+{
+}
+void SideScrollerPlayState::tickEnd(float dt_)
+{
+}
+

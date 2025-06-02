@@ -181,6 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\textures\sandbox_choice_state\energy.png" />
+    <Image Include="assets\textures\sandbox_choice_state\face_choice_not_triggered.png" />
+    <Image Include="assets\textures\sandbox_choice_state\face_choice_triggered.png" />
     <Image Include="assets\textures\sandbox_choice_state\Item_1.png" />
     <Image Include="assets\textures\sandbox_choice_state\item_2.png" />
     <Image Include="assets\textures\sandbox_choice_state\item_3.png" />

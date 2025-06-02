@@ -247,6 +247,12 @@
     <Image Include="assets\textures\sandbox_play_state\10.png">
       <Filter>assets\textures\sandbox_play_state</Filter>
     </Image>
+    <Image Include="assets\textures\sandbox_choice_state\face_choice_not_triggered.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_choice_state\face_choice_triggered.png">
+      <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\fonts\Crusty.ttf">

@@ -35,7 +35,7 @@ void Cfg::initTextures()
 	textures.load(Textures::Ship, "assets/textures/sandbox_choice_state/ship.png");
 	textures.load(Textures::ChoiceStateBG, "assets/textures/sandbox_choice_state/choice_state_bg.jpg");
 	textures.load(Textures::MyFaceUntriggered, "assets/textures/sandbox_choice_state/face_choice_not_triggered.png");
-	textures.load(Textures::MyFaceTriggered, "assets/textures/sandbox_choice_state/face_choice_not_untriggered.png");
+	textures.load(Textures::MyFaceTriggered, "assets/textures/sandbox_choice_state/face_choice_triggered.png");
 
 
 }

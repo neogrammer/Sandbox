@@ -13,7 +13,6 @@ public:
 	SideScrollerState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ }
 	{
 		
-		
 	}
 	~SideScrollerState() override final {}
 

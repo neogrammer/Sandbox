@@ -25,6 +25,9 @@
     <Filter Include="assets\textures\sandbox_choice_state">
       <UniqueIdentifier>{3f12d35b-0844-4038-aaf0-857b54f53aab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\textures\sandbox_play_state">
+      <UniqueIdentifier>{d847ea96-9dbf-47a8-bdd0-68df9031d9ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -58,6 +61,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SideScrollerState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StarShooterState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundLayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tilemap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SideScrollerPlayState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -123,6 +138,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IKinematics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StarShooterState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tilemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SideScrollerPlayState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -195,6 +222,30 @@
     </Image>
     <Image Include="assets\textures\sandbox_choice_state\ship.png">
       <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\1.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\2.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\3.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\5.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\6.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\7.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\8.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_play_state\10.png">
+      <Filter>assets\textures\sandbox_play_state</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

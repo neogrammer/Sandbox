@@ -7,6 +7,7 @@
 #include <random>
 #include "SandboxChoiceState.h"
 #include "SideScrollerState.h"
+#include "StarShooterState.h"
 
 
 class SandboxApp
@@ -39,6 +40,8 @@ public:
 	{
 		gStates.emplace(std::pair{ GStateType::SandboxChoice, std::make_shared<SandboxChoiceState>(mTV) });
 		gStates.emplace(std::pair{ GStateType::SandboxSideScroller, std::make_shared<SideScrollerState>(mTV) });
+		gStates.emplace(std::pair{ GStateType::SandboxStarShooter, std::make_shared<StarShooterState>(mTV) });
+
 
 		mCurrGState = gStates[GStateType::SandboxChoice];
 		

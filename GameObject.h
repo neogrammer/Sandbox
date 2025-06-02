@@ -103,11 +103,11 @@ public:
 		mVel = tmpVel;
 
 		
-		std::cout << "\npos:" << mPos.x << "," << mPos.y;
+		/*std::cout << "\npos:" << mPos.x << "," << mPos.y;
 
 		std::cout << "\nvel:" << mVel.x << "," << mVel.y;
 
-		std::cout << "\nacc:" << mAccel.x << "," << mAccel.y << std::endl;
+		std::cout << "\nacc:" << mAccel.x << "," << mAccel.y << std::endl;*/
 
 
 		

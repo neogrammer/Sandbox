@@ -9,7 +9,7 @@ namespace sbx
 		std::string mMsg;
 
 	public:
-		SandboxError(std::string msg_) : std::exception{ msg_.c_str() }, mMsg{}
+		SandboxError(std::string msg_ = "") : std::exception{msg_.c_str()}, mMsg{}
 		{
 			std::string msg = "Custom Exception Occurred : [";
 			msg.append(msg_);

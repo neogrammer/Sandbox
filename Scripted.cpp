@@ -21,7 +21,7 @@ void Scripted::addScript(Script&& scr_)
 		}
 		if (tempIndex == -1)
 		{
-			sbx::SandboxError(R"(CurrScript does not point to anything in the scripts vector!)");
+			sbx::SandboxError("CurrScript does not point to anything in the scripts vector!");
 		}
 		else
 		{	
@@ -32,7 +32,7 @@ void Scripted::addScript(Script&& scr_)
 	}
 	if (mCurrIndex == -1)
 	{
-		sbx::SandboxError(R"(the current script index in Scripted class is -1 for some odd reason, which makes no sense so im crashing your shit)");
+		sbx::SandboxError("The current script index in Scripted class is -1 for some odd reason, which makes no sense so im crashing your shit");
 	}
 }
 
@@ -58,9 +58,9 @@ void Scripted::setScriptToPrevious()
 	else
 	{
 		if (mScripts.empty())
-			sbx::SandboxError(R"(Trying to set script to previous script, without any scripts to work with whatsoever.  fix that.)");
+			sbx::SandboxError("Trying to set script to previous script, without any scripts to work with whatsoever.  fix that.");
 		if (mCurrIndex >= mScripts.size())
-			sbx::SandboxError(R"(Mismatch in currindex expected from scripts, and currindex trying to reach, outside the vector space)");
+			sbx::SandboxError("Mismatch in currindex expected from scripts, and currindex trying to reach, outside the vector space");
 	}
 
 	mCurrScript = &mScripts[mCurrIndex];

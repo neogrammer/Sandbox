@@ -6,6 +6,12 @@ void SideScrollerState::handleInput(float dt_)
     {
         switchGState(GStateType::SandboxChoice);
     }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P))
+    {
+        switchGState(GStateType::SandboxSideScrollerPlay);
+
+    }
 }
 
 void SideScrollerState::handleEvent(const std::optional<sf::Event>& evt_)

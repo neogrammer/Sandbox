@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -137,6 +137,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimObject.cpp" />
+    <ClCompile Include="BackgroundLayer.cpp" />
     <ClCompile Include="Cfg.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
@@ -146,12 +147,16 @@
     <ClCompile Include="SandboxError.cpp" />
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="Scripted.cpp" />
+    <ClCompile Include="SideScrollerPlayState.cpp" />
     <ClCompile Include="SideScrollerState.cpp" />
+    <ClCompile Include="StarShooterState.cpp" />
+    <ClCompile Include="Tilemap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimObject.h" />
     <ClInclude Include="AnimType.h" />
+    <ClInclude Include="BackgroundLayer.h" />
     <ClInclude Include="Cfg.h" />
     <ClInclude Include="DirType.h" />
     <ClInclude Include="GameObject.h" />
@@ -168,8 +173,11 @@
     <ClInclude Include="ScriptType.h" />
     <ClInclude Include="SFEventSensitive.h" />
     <ClInclude Include="SFInputSensitive.h" />
+    <ClInclude Include="SideScrollerPlayState.h" />
     <ClInclude Include="SideScrollerState.h" />
     <ClInclude Include="Star.h" />
+    <ClInclude Include="StarShooterState.h" />
+    <ClInclude Include="Tilemap.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\textures\sandbox_choice_state\energy.png" />
@@ -194,6 +202,14 @@
     <Image Include="assets\textures\sandbox_choice_state\Space Ships Explosion.png" />
     <Image Include="assets\textures\sandbox_choice_state\turbo_blue.png" />
     <Image Include="assets\textures\sandbox_choice_state\turbo_green.png" />
+    <Image Include="assets\textures\sandbox_play_state\1.png" />
+    <Image Include="assets\textures\sandbox_play_state\10.png" />
+    <Image Include="assets\textures\sandbox_play_state\2.png" />
+    <Image Include="assets\textures\sandbox_play_state\3.png" />
+    <Image Include="assets\textures\sandbox_play_state\5.png" />
+    <Image Include="assets\textures\sandbox_play_state\6.png" />
+    <Image Include="assets\textures\sandbox_play_state\7.png" />
+    <Image Include="assets\textures\sandbox_play_state\8.png" />
     <Image Include="invariant.png" />
   </ItemGroup>
   <ItemGroup>

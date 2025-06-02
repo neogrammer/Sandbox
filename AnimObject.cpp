@@ -75,7 +75,7 @@ sf::IntRect AnimObject::getCurrRect()
 {
 	if (mCurrAnim == AnimType::UNKNOWN || mCurrDir == DirType::UNKNOWN)
 	{
-		std::string str("nanimType_ passed into Animation::getAnimation() is : ");
+		std::string str("\nanimType_ passed into Animation::getAnimation() is : ");
 		str.append("\ndir_ passed into it is : ");
 		throw sbx::SandboxError(str);
 	}
@@ -126,7 +126,7 @@ sf::Vector2f AnimObject::getSizeAt(AnimType animType_, DirType dir_, uint32_t in
 {
 	if (animType_ == AnimType::UNKNOWN || dir_ == DirType::UNKNOWN)
 	{
-		std::string str("nanimType_ passed into Animation::getSizeAt() is : ");
+		std::string str("\nanimType_ passed into Animation::getSizeAt() is : ");
 		str.append("\ndir_ passed into it is : ");
 		throw sbx::SandboxError(str);
 	}
@@ -149,7 +149,7 @@ sf::Vector2f AnimObject::getOffAt(AnimType animType_, DirType dir_, uint32_t ind
 {
 	if (animType_ == AnimType::UNKNOWN || dir_ == DirType::UNKNOWN)
 	{
-		std::string str("nanimType_ passed into Animation::getOffAt() is : ");
+		std::string str("\nanimType_ passed into Animation::getOffAt() is : ");
 		str.append("\ndir_ passed into it is : ");
 		throw sbx::SandboxError(str);
 	}
@@ -172,7 +172,7 @@ sf::IntRect AnimObject::getRectAt(AnimType animType_, DirType dir_, uint32_t ind
 {
 	if (animType_ == AnimType::UNKNOWN || dir_ == DirType::UNKNOWN)
 	{
-		std::string str("nanimType_ passed into Animation::getRectAt() is : ");
+		std::string str("\nanimType_ passed into Animation::getRectAt() is : ");
 		str.append("\ndir_ passed into it is : ");
 		throw sbx::SandboxError(str);
 	}
@@ -195,7 +195,7 @@ Cfg::Textures AnimObject::getTexAt(AnimType animType_, DirType dir_)
 {
 	if (animType_ == AnimType::UNKNOWN || dir_ == DirType::UNKNOWN)
 	{
-		std::string str("nanimType_ passed into Animation::getTexAt() is : ");
+		std::string str("\nanimType_ passed into Animation::getTexAt() is : ");
 		str.append("\ndir_ passed into it is : ");
 		throw sbx::SandboxError(str);
 	}

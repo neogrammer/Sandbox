@@ -36,23 +36,6 @@ void SandboxApp::updateFrame()
 
 void SandboxApp::updateWorld(float dt_)
 {
-    //// update current scene non-culled objects by dt_
-    //for (auto& star : stars)
-    //{
-    //    star->distance += star->speed * dt_ * (star->distance / 800.f);
-    //    //auto pos = star->distance + (star->speed * dt_);
-    //    //star->distance = pos; 
-    //   //star->angle += (10.f * dt_);
-    //    if (star->distance > 800.f)
-    //    {
-    //        star->angle = Random(0.f, 2.0f * 3.14159f);
-    //        //star->speed = Random(10.f,100.f);
-    //        star->distance = Random(1.f, 100.f);
-    //        float lum = Random(0.3f, 1.f);
-    //        star->col = sf::Color((uint8_t)(lum * 255.f), (uint8_t)(lum * 255.f), (uint8_t)(lum * 255.f), 255);
-    //    }
-    //}
-   
 }
 
 void SandboxApp::render()

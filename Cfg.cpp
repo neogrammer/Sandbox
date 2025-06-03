@@ -37,8 +37,13 @@ void Cfg::initTextures()
 	textures.load(Textures::MyFaceUntriggered, "assets/textures/sandbox_choice_state/face_choice_not_triggered.png");
 	textures.load(Textures::MyFaceTriggered, "assets/textures/sandbox_choice_state/face_choice_triggered.png");
 	textures.load(Textures::CrashersBG, "assets/textures/sandbox_side_scroller/bg.png");
+	textures.load(Textures::Crash_Intro_0, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer0.png");
+	textures.load(Textures::Crash_Intro_1, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer1.png");
+	textures.load(Textures::Crash_Intro_2, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer2.png");
+	textures.load(Textures::Crash_Intro_3, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer3.png");
 
 
+	
 }
 
 void Cfg::destroyTextures()

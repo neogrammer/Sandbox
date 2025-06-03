@@ -23,14 +23,12 @@ public:
 	virtual ~GameState() {}
 
 	GStateType getType() { return mType; }
-	bool isPendingSwitch() { return (mPendingType != mType); }
+	bool isPendingSwitch() { return (mPendingType != GStateType::None); }
 	GStateType getPendingType()
 	{
-		auto type = mPendingType;
-		if (type == GStateType::None) { return GStateType::None; }
-		mPendingType = mType;
-		return type;
+		return mPendingType;
 	}
+
 	void switchGState(GStateType type_)
 	{
 		mPendingType = type_;

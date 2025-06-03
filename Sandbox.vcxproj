@@ -219,6 +219,10 @@
     <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_03.png" />
     <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_04.png" />
     <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_05.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer0.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer1.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer2.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer3.png" />
     <Image Include="invariant.png" />
   </ItemGroup>
   <ItemGroup>

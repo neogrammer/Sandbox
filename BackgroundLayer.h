@@ -1,10 +1,10 @@
 // BackgroundLayer.h
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include "Cfg.h"
 class BackgroundLayer {
 public:
-    BackgroundLayer(const std::string& filename, float scrollSpeed);
+    BackgroundLayer(Cfg::Textures tex_, float scrollSpeed);
 
     void update(float dt);
     void draw(sf::RenderWindow& window);

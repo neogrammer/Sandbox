@@ -3,20 +3,16 @@
 #include "SideScrollerPlayState.h"
 #include "Cfg.h"
 
-SideScrollerPlayState::SideScrollerPlayState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ } {}
+SideScrollerPlayState::SideScrollerPlayState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ } { load(); }
 
 SideScrollerPlayState::~SideScrollerPlayState() {}
 
 void SideScrollerPlayState::load() {
     // Load different layers with varying scroll speeds
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/1.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/2.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/3.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/5.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/5.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/7.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/8.png", 20.0f);
-    _backgroundLayers.emplace_back("assets/textures/sandbox_play_state/10.png", 20.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_0, 20.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_1, 20.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_2, 20.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_3, 20.0f);
 
     // Add more layers as needed
 }
@@ -32,13 +28,13 @@ void SideScrollerPlayState::render(sf::RenderWindow& window) {
         layer.draw(window);
     }
 
-    sf::Text txt{ Cfg::fonts.get(Cfg::Fonts::SandboxChoiceStateFont) };
-    txt.setString("PlayState for Crashers");
-    txt.setPosition({ 100.f,100.f });
-    txt.setCharacterSize(36U);
-    txt.setFillColor(sf::Color::White);
+    //sf::Text txt{ Cfg::fonts.get(Cfg::Fonts::SandboxChoiceStateFont) };
+    //txt.setString("PlayState for Crashers");
+    //txt.setPosition({ 100.f,100.f });
+    //txt.setCharacterSize(36U);
+    //txt.setFillColor(sf::Color::White);
 
-    window.draw(txt);
+    //window.draw(txt);
 
 }
 

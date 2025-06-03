@@ -18,7 +18,7 @@ public:
 	static void Initialize();
 	static void Uninitialize();
 	// Resource Enums 
-	enum class Textures  { Ship, CrashersBG, ChoiceStateBG,  MyFaceUntriggered, MyFaceTriggered, UNKNOWN };
+	enum class Textures  { Ship, CrashersBG, Crash_Intro_0, Crash_Intro_1, Crash_Intro_2, Crash_Intro_3, ChoiceStateBG,  MyFaceUntriggered, MyFaceTriggered, UNKNOWN };
 	enum class Fonts  { SandboxChoiceStateFont };
 	enum class Music {  };
   enum class Sounds { };

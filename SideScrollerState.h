@@ -5,12 +5,13 @@
 class SideScrollerState : public GameState
 {
 
-
+	sf::Sprite bg;
 	
 
 
 public:
 	SideScrollerState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ }
+		, bg{Cfg::textures.get(Cfg::Textures::CrashersBG)}
 	{
 		
 	}

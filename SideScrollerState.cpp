@@ -41,6 +41,8 @@ void SideScrollerState::render(sf::RenderWindow& tv_)
 
     tv_.draw(txt);
 
+    sf::Sprite spr{ Cfg::textures.get(Cfg::Textures::CrashersBG) };
+    tv_.draw(spr);
 
 }
 

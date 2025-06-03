@@ -213,6 +213,12 @@
     <Image Include="assets\textures\sandbox_play_state\6.png" />
     <Image Include="assets\textures\sandbox_play_state\7.png" />
     <Image Include="assets\textures\sandbox_play_state\8.png" />
+    <Image Include="assets\textures\sandbox_side_scroller\bg.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layered.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_02.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_03.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_04.png" />
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_05.png" />
     <Image Include="invariant.png" />
   </ItemGroup>
   <ItemGroup>

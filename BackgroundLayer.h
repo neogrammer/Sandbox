@@ -8,7 +8,10 @@ public:
 
     void update(float dt);
     void draw(sf::RenderWindow& window);
-
+    void setScrollSpeed(float spdX_, float spdY_= 0.f);
+    sf::Vector2f getPosition();
+    void setPosition(sf::Vector2f pos_);
+    sf::Vector2u getTextureSize();
 private:
     sf::Texture _texture;
     sf::Sprite _sprite;

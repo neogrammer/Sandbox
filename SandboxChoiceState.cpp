@@ -24,9 +24,14 @@ void SandboxChoiceState::handleInput(float dt_)
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
             {
                 if (currOpt == 0)
+                {
                     switchGState(GStateType::SandboxStarShooter);
+                    
+                }
                 else if (currOpt == 1)
+                {
                     switchGState(GStateType::SandboxSideScroller);
+                }
                 
 
             }

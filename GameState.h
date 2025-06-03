@@ -18,6 +18,8 @@ protected:
 
 	bool closing{ false };
 
+
+
 public:
 	GameState(GStateType type_, sf::RenderWindow& tv_) : mType{ type_ }, mPendingType{ type_ }, mainView{ tv_.getDefaultView() }, guiView{ tv_.getDefaultView() } {}
 	virtual ~GameState() {}

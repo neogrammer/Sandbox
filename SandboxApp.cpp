@@ -24,14 +24,20 @@ void SandboxApp::updateFrame()
 
     mCurrGState->tickBegin();
     float dt = mTimer.restart().asSeconds();
+    mElapsed += sf::seconds(dt);
+    while (mElapsed.asSeconds() > FPS60)
+    {
 
-    mCurrGState->handleInput(dt);
-    mCurrGState->update(mTV, dt);
-    mCurrGState->handleCollisions();
-    mCurrGState->animate();
+        mCurrGState->handleInput(dt);
+        mCurrGState->update(mTV, dt);
+        mCurrGState->handleCollisions();
+        mCurrGState->animate();
 
-    mCurrGState->tickEnd(dt);
+        mCurrGState->tickEnd(dt);
 
+        mElapsed -= sf::seconds(dt);
+
+    }
 }
 
 void SandboxApp::updateWorld(float dt_)
@@ -56,7 +62,10 @@ void SandboxApp::run()
         {
             auto t = mCurrGState->getPendingType();
             if (t != GStateType::None)
+            {
+                mCurrGState->resetPending();
                 mCurrGState = gStates[t];
+            }
         }
         else        
         {

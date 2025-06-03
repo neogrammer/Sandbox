@@ -9,10 +9,10 @@ SideScrollerPlayState::~SideScrollerPlayState() {}
 
 void SideScrollerPlayState::load() {
     // Load different layers with varying scroll speeds
-    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_0, 20.0f);
-    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_1, 20.0f);
-    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_2, 20.0f);
-    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_3, 20.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_0, 25.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_1, 50.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_2, 75.0f);
+    _backgroundLayers.emplace_back(Cfg::Textures::Crash_Intro_3, 100.0f);
 
     // Add more layers as needed
 }
@@ -25,16 +25,16 @@ void SideScrollerPlayState::update(sf::RenderWindow& window, float dt) {
 
 void SideScrollerPlayState::render(sf::RenderWindow& window) {
     for (auto& layer : _backgroundLayers) {
-        layer.draw(window);
+       layer.draw(window);
     }
 
-    //sf::Text txt{ Cfg::fonts.get(Cfg::Fonts::SandboxChoiceStateFont) };
-    //txt.setString("PlayState for Crashers");
-    //txt.setPosition({ 100.f,100.f });
-    //txt.setCharacterSize(36U);
-    //txt.setFillColor(sf::Color::White);
+   /* sf::Text txt{ Cfg::fonts.get(Cfg::Fonts::SandboxChoiceStateFont) };
+    txt.setString("PlayState for Crashers");
+    txt.setPosition({ 100.f,100.f });
+    txt.setCharacterSize(36U);
+    txt.setFillColor(sf::Color::White);
 
-    //window.draw(txt);
+    window.draw(txt);*/
 
 }
 

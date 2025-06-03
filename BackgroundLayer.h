@@ -14,4 +14,6 @@ private:
     sf::Sprite _sprite;
     float _scrollSpeed;
     float _offset;
+
+    
 };

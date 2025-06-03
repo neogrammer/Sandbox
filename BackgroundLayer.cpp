@@ -12,11 +12,19 @@ BackgroundLayer::BackgroundLayer(Cfg::Textures tex_, float scrollSpeed)
     }*/
 }
 
-void BackgroundLayer::update(float dt) {
-    _offset += _scrollSpeed * dt;
-    if (_offset > _texture.getSize().x)
+void BackgroundLayer::update(float dt) 
+{
+
+
+
+    auto xFrameDisp = -_scrollSpeed * dt;
+    if (_offset + xFrameDisp > _texture.getSize().x)
         _offset -= _texture.getSize().x;
-    _sprite.setPosition({ _sprite.getPosition().x - _offset, _sprite.getPosition().y - _offset});
+    else
+    {
+        _offset += xFrameDisp;
+    }
+    _sprite.setPosition({_sprite.getPosition().x + xFrameDisp, _sprite.getPosition().y});
 }
 
 void BackgroundLayer::draw(sf::RenderWindow& window) {
@@ -29,7 +37,7 @@ void BackgroundLayer::draw(sf::RenderWindow& window) {
     {
         window.draw(_sprite);
         sf::Sprite tempSprite = _sprite;
-        tempSprite.setPosition({ _sprite.getPosition().x + _texture.getSize().x, 0.f });
+        tempSprite.setPosition({ _sprite.getPosition().x + _sprite.getTexture().getSize().x, 0.f});
         window.draw(tempSprite);
     }
 }

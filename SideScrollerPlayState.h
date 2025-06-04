@@ -7,7 +7,7 @@
 #include "GameSTate.h"
 
 class SideScrollerPlayState : public GameState {
-	float totalXScrolled{ 0.f };
+	std::vector<float> totalXScrolled;
 public:
     SideScrollerPlayState(sf::RenderWindow& tv_);
     ~SideScrollerPlayState();

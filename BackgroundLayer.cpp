@@ -59,3 +59,8 @@ sf::Vector2u BackgroundLayer::getTextureSize()
 {
     return _sprite.getTexture().getSize();
 }
+
+float BackgroundLayer::getScrollSpeed()
+{
+    return _scrollSpeed;
+}

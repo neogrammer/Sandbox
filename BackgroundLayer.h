@@ -12,6 +12,8 @@ public:
     sf::Vector2f getPosition();
     void setPosition(sf::Vector2f pos_);
     sf::Vector2u getTextureSize();
+    float getScrollSpeed();
+  
 private:
     sf::Texture _texture;
     sf::Sprite _sprite;

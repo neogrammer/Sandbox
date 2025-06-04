@@ -3,7 +3,15 @@
 #include "SideScrollerPlayState.h"
 #include "Cfg.h"
 #include <iostream>
-SideScrollerPlayState::SideScrollerPlayState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ } { load(); }
+SideScrollerPlayState::SideScrollerPlayState(sf::RenderWindow& tv_) : GameState{ GStateType::SandboxSideScroller, tv_ }, totalXScrolled{} 
+{
+    
+    load(); 
+    totalXScrolled.clear();
+    totalXScrolled.reserve(4);
+    for (int i = 0; i < 4; i++)
+        totalXScrolled.emplace_back(float{0.f});
+}
 
 SideScrollerPlayState::~SideScrollerPlayState() {}
 
@@ -52,113 +60,386 @@ void SideScrollerPlayState::handleInput(float dt_)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
     {
         
+        if ((_backgroundLayers[0].getPosition().x - ((.25f * 200.f)) * dt_) >= 0.f || (totalXScrolled[0] + ((0.25f * 200.f)) * dt_) < 0.f)
+        {
+            _backgroundLayers[0].setScrollSpeed(.25f * 200.f);
+        }
+        else if ((totalXScrolled[0] + ((.25f * 200.f)) * dt_) > 0.f)
+        {
+            totalXScrolled[0] = 0.f;
+            //moved position will be 
+            _backgroundLayers[0].setPosition({  0.f ,0.f });
+            _backgroundLayers[0].setScrollSpeed(0.f);
+        }
 
-        _backgroundLayers[0].setScrollSpeed(0.25f * 200.f);
+        if (_backgroundLayers[0].getScrollSpeed() != 0.f)
+        {
+            if ((totalXScrolled[0] + ((0.25f * 200.f) * dt_)) == 0.f)
+            {
+                totalXScrolled[0] = 0.f;
+
+                _backgroundLayers[0].setPosition({0.f ,0.f });
+            }
+            else  if ((totalXScrolled[0] + ((0.25f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[0] += ((0.25f * 200.f) * dt_);
+
+                _backgroundLayers[0].setPosition({ _backgroundLayers[0].getPosition().x - ((0.25f + (0.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[0] + ((0.25f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[0] = 0.f;
+
+                _backgroundLayers[0].setPosition({ 0.f  ,0.f });
+            }
+        }
+
+        if ((_backgroundLayers[1].getPosition().x - ((.5f * 200.f)) * dt_) >= 0.f || (totalXScrolled[1] + ((.5f * 200.f)) * dt_) < 0.f)
+        {
+            _backgroundLayers[1].setScrollSpeed(.5f * 200.f);
+        }
+        else if ((totalXScrolled[1] + ((.5f * 200.f)) * dt_) < 0.f)
+        {
+            totalXScrolled[1] = 0.f;
+            //moved position will be 
+            _backgroundLayers[1].setPosition({ 0.f,0.f });
+            _backgroundLayers[1].setScrollSpeed(0.f);
+        }
+
+        if (_backgroundLayers[1].getScrollSpeed() != 0.f)
+        {
+            if ((totalXScrolled[1] + ((0.5f * 200.f) * dt_)) == 0.f)
+            {
+                totalXScrolled[1] = 0.f;
+
+                _backgroundLayers[1].setPosition({ 0.f ,0.f });
+            }
+            else if ((totalXScrolled[1] + ((0.5f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[1] += ((0.5f * 200.f) * dt_);
+
+                _backgroundLayers[1].setPosition({ _backgroundLayers[1].getPosition().x - ((0.25f + (1.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[1] + ((0.5f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[1] = 0.f;
+
+                _backgroundLayers[1].setPosition({ 0.f  ,0.f });
+            }
+
+
+        }
+
+
+        if ((_backgroundLayers[2].getPosition().x - ((.75f * 200.f)) * dt_) <= 0.f || (totalXScrolled[2] + ((.75f * 200.f)) * dt_) > 0.f)
+        {
+            _backgroundLayers[2].setScrollSpeed(.75f *  200.f);
+        }
+        else if ((totalXScrolled[2] + ((.75f * 200.f)) * dt_) < 0.f)
+        {
+            totalXScrolled[2] = 0.f;
+            //moved position will be 
+            _backgroundLayers[2].setPosition({ 0.f ,0.f });
+            _backgroundLayers[2].setScrollSpeed(0.f);
+        }
+
+        if (_backgroundLayers[2].getScrollSpeed() != 0.f)
+        {
+            if ((totalXScrolled[2] + ((0.75f * 200.f) * dt_)) == 0.f)
+            {
+                totalXScrolled[2] = 0.f;
+
+                _backgroundLayers[2].setPosition({0.f ,0.f });
+            }
+            else if ((totalXScrolled[2] + ((0.75f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[2] += ((0.75f * 200.f) * dt_);
+
+                _backgroundLayers[2].setPosition({ _backgroundLayers[2].getPosition().x + ((0.25f + (2.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[2] + ((0.75f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[2] = 0.f;
+
+                _backgroundLayers[2].setPosition({ 0.f  ,0.f });
+            }
+
+
+        }
+
+
+        if ((_backgroundLayers[3].getPosition().x - ((1.f * 200.f)) * dt_) <= 0.f || (totalXScrolled[3] + ((1.f * 200.f)) * dt_) > 0.f)
+        {
+            _backgroundLayers[3].setScrollSpeed(1.00f * -200.f);
+        }
+        else if ((totalXScrolled[3] + ((1.f * 200.f)) * dt_) < 0.f)
+        {
+            totalXScrolled[3] = 0.f;
+            //moved position will be 
+            _backgroundLayers[3].setPosition({ 0.f ,0.f });
+            _backgroundLayers[3].setScrollSpeed(0.f);
+        }
+
+        if (_backgroundLayers[3].getScrollSpeed() != 0.f)
+        {
+            if ((totalXScrolled[3] + ((1.f * 200.f) * dt_)) == 0.f)
+            {
+                totalXScrolled[3] = 0.f;
+
+                _backgroundLayers[3].setPosition({ 0.f,0.f });
+            }
+            else if ((totalXScrolled[3] + ((1.f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[3] += ((1.f * 200.f) * dt_);
+
+                _backgroundLayers[3].setPosition({ _backgroundLayers[3].getPosition().x - ((0.25f + (3.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[3] + ((1.f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[3] = 0.f;
+
+                _backgroundLayers[3].setPosition({ 0.f  ,0.f });
+            }
+
+
+        }
+
+
+
+
+     /*   _backgroundLayers[0].setScrollSpeed(0.25f * 200.f);
         _backgroundLayers[1].setScrollSpeed(0.50f * 200.f);
         _backgroundLayers[2].setScrollSpeed(0.75f * 200.f);
         _backgroundLayers[3].setScrollSpeed(1.00f * 200.f);
 
-        totalXScrolled += 200.f * dt_;
-        std::cout << std::to_string(totalXScrolled) << std::endl;
+        for (int i = 0; i < 4; i++)
+        {
+
+            totalXScrolled[i] += (((0.25f + (float)i * 25.f) * 200.f) * dt_);
+        }
+
+      */
+        std::cout << std::to_string(totalXScrolled[0]) << std::endl;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
     {
-        if (_backgroundLayers[3].getPosition().x + 200.f * dt_ <= 0.f || totalXScrolled - 200.f * dt_ > 0.f)
+
+
+        if ((_backgroundLayers[0].getPosition().x + ((.25f * 200.f)) * dt_) <= 0.f || (totalXScrolled[0] - ((0.25f * 200.f)) * dt_) > 0.f)
         {
-            _backgroundLayers[3].setScrollSpeed(1.00f * -200.f);
+            _backgroundLayers[0].setScrollSpeed(.25f * -200.f);
         }
-        else
+        else if ((totalXScrolled[0] - ((.25f * 200.f)) * dt_) < 0.f)
         {
-            if (totalXScrolled > 0.f)
-            {
-
-                _backgroundLayers[3].setPosition({ -1.f * _backgroundLayers[3].getTextureSize().x ,0.f });
-                _backgroundLayers[3].setScrollSpeed(1.f * -200.f);
-
-            }
-            else
-            {
-                totalXScrolled = 0.f;
-                _backgroundLayers[3].setPosition({ 0.f,0.f });
-                _backgroundLayers[3].setScrollSpeed(0.f);
-
-            }
-           
+            totalXScrolled[0] = 0.f;
+            //moved position will be 
+            _backgroundLayers[0].setPosition({ -1.f * _backgroundLayers[0].getTextureSize().x ,0.f });
+            _backgroundLayers[0].setScrollSpeed(0.f);
         }
-        if (_backgroundLayers[2].getPosition().x + 150.f * dt_ <= 0.f || totalXScrolled - 200.f * dt_ > 0.f)
+        
+        if (_backgroundLayers[0].getScrollSpeed() != 0.f)
         {
-            _backgroundLayers[2].setScrollSpeed(0.75f * -200.f);
-        }
-        else
-        {
-            if (totalXScrolled > 0.f)
+            if ((totalXScrolled[0] - ((0.25f * 200.f) * dt_)) == 0.f)
             {
-
-                _backgroundLayers[2].setPosition({ -1.f * _backgroundLayers[2].getTextureSize().x ,0.f });
-                _backgroundLayers[2].setScrollSpeed(0.75f * -200.f);
-
-            }
-            else
-            {
-                totalXScrolled = 0.f;
-                _backgroundLayers[2].setPosition({ 0.f,0.f });
-                _backgroundLayers[2].setScrollSpeed(0.f);
-
-            }
-            
-        }
-
-        if (_backgroundLayers[1].getPosition().x + 100.f * dt_ <= 0.f || totalXScrolled -200.f * dt_ > 0.f)
-        {
-            _backgroundLayers[1].setScrollSpeed(.50f * -200.f);
-        }
-        else
-        {
-            if (totalXScrolled > 0.f)
-            {
-
-                _backgroundLayers[1].setPosition({ -1.f * _backgroundLayers[1].getTextureSize().x ,0.f });
-                _backgroundLayers[1].setScrollSpeed(0.5f * -200.f);
-
-            }
-            else
-            {
-                totalXScrolled = 0.f;
-                _backgroundLayers[1].setPosition({ 0.f,0.f });
-                _backgroundLayers[1].setScrollSpeed(0.f);
-
-            }
-        }
-
-        if (_backgroundLayers[0].getPosition().x + 50.f * dt_ <= 0 || totalXScrolled - 200.f * dt_ > 0.f)
-        {
-            _backgroundLayers[0].setScrollSpeed(0.25f * -200.f);
-        }
-        else
-        {
-            if (totalXScrolled > 0.f)
-            {
+                totalXScrolled[0] = 0.f;
 
                 _backgroundLayers[0].setPosition({ -1.f * _backgroundLayers[0].getTextureSize().x ,0.f });
-                _backgroundLayers[0].setScrollSpeed(0.25f * -200.f);
-
             }
-            else
+            else if ((totalXScrolled[0] - ((0.25f * 200.f) * dt_)) > 0.f)
             {
-                totalXScrolled = 0.f;
-                _backgroundLayers[0].setPosition({ 0.f,0.f });
-                _backgroundLayers[0].setScrollSpeed(0.f);
+                totalXScrolled[0] -= ((0.25f * 200.f) * dt_);
 
+                _backgroundLayers[0].setPosition({ _backgroundLayers[0].getPosition().x + ((0.25f + (0.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[0] - ((0.25f * 200.f) * dt_)) < 0.f)
+            {
+                totalXScrolled[0] = 0.f;
+
+                _backgroundLayers[0].setPosition({ 0.f  ,0.f });
+            }
+
+
+        }
+
+        if ((_backgroundLayers[1].getPosition().x + ((.5f * 200.f)) * dt_) <= 0.f || (totalXScrolled[1] - ((.5f * 200.f)) * dt_) > 0.f)
+        {
+            _backgroundLayers[1].setScrollSpeed(.5f * -200.f);
+        }
+        else if ((totalXScrolled[1] - ((.5f * 200.f)) * dt_) < 0.f)
+        {
+            totalXScrolled[1] = 0.f;
+            //moved position will be 
+            _backgroundLayers[1].setPosition({ -1.f * _backgroundLayers[1].getTextureSize().x ,0.f });
+            _backgroundLayers[1].setScrollSpeed(0.f);
+        }
+
+        if (_backgroundLayers[1].getScrollSpeed() != 0.f)
+        {
+            if ((totalXScrolled[1] - ((0.5f * 200.f) * dt_)) == 0.f)
+            {
+                totalXScrolled[1] = 0.f;
+
+                _backgroundLayers[1].setPosition({ -1.f * _backgroundLayers[1].getTextureSize().x ,0.f });
+            }
+            else if ((totalXScrolled[1] - ((0.5f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[1] -= ((0.5f * 200.f) * dt_);
+
+                _backgroundLayers[1].setPosition({ _backgroundLayers[1].getPosition().x + ((0.25f + (1.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[1] - ((0.5f * 200.f) * dt_)) < 0.f)
+            {
+                totalXScrolled[1] = 0.f;
+
+                _backgroundLayers[1].setPosition({ 0.f  ,0.f });
+            }
+
+
+        }
+
+
+        if ((_backgroundLayers[2].getPosition().x + ((.75f * 200.f)) * dt_) <= 0.f || (totalXScrolled[2] - ((.75f * 200.f)) * dt_) > 0.f)
+        {
+            _backgroundLayers[2].setScrollSpeed(.75f * -200.f);
+        }
+        else if ((totalXScrolled[2] - ((.75f * 200.f)) * dt_) < 0.f)
+        {
+            totalXScrolled[2] = 0.f;
+            //moved position will be 
+            _backgroundLayers[2].setPosition({ -1.f * _backgroundLayers[2].getTextureSize().x ,0.f });
+            _backgroundLayers[2].setScrollSpeed(0.f);
+        }
+
+        if (_backgroundLayers[2].getScrollSpeed() != 0.f)
+        {
+            if ((totalXScrolled[2] - ((0.75f * 200.f) * dt_)) == 0.f)
+            {
+                totalXScrolled[2] = 0.f;
+
+                _backgroundLayers[2].setPosition({ -1.f * _backgroundLayers[2].getTextureSize().x ,0.f });
+            }
+            else if ((totalXScrolled[2] - ((0.75f * 200.f) * dt_)) > 0.f)
+            {
+                totalXScrolled[2] -= ((0.75f * 200.f) * dt_);
+
+                _backgroundLayers[2].setPosition({ _backgroundLayers[2].getPosition().x + ((0.25f + (2.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            }
+            else if (auto off = (totalXScrolled[2] - ((0.75f * 200.f) * dt_)) < 0.f)
+            {
+                totalXScrolled[2] = 0.f;
+
+                _backgroundLayers[2].setPosition({ 0.f  ,0.f });
+            }
+
+
+        }
+
+        /// COPY THIS SNIPPET BELOW TO ALL OTHERS
+        if ((_backgroundLayers[3].getPosition().x + ((1.f * 200.f)) * dt_) <= 0.f || (totalXScrolled[3] - ((1.f * 200.f)) * dt_) > 0.f)
+        {
+            _backgroundLayers[3].setScrollSpeed(1.00f * -200.f);
+            _backgroundLayers[3].setPosition({ _backgroundLayers[3].getPosition().x + ((0.25f + (3.f * 0.25f)) * 200.f) * dt_  ,0.f });
+            totalXScrolled[3] -= ((1.f * 200.f) * dt_);
+
+        }
+        else
+        {
+            if (_backgroundLayers[3].getPosition().x + ((1.f * 200.f)) * dt_ > 0.f)
+            {
+                auto pos = _backgroundLayers[3].getPosition().x + ((1.f * 200.f)) * dt_;
+                _backgroundLayers[3].setScrollSpeed(1.00f * -200.f);
+                _backgroundLayers[3].setPosition({ _backgroundLayers[3].getPosition().x - _backgroundLayers[3].getTextureSize().x  ,0.f });
+                totalXScrolled[3] = -pos + _backgroundLayers[3].getTextureSize().x;
+
+                // uh oh gap on left side of screen!
+            }
+            else if (totalXScrolled[3] - ((1.f * 200.f)) * dt_ < 0.f)
+            {
+                totalXScrolled[3] = _backgroundLayers[3].getTextureSize().x;
+                //moved position will be 
+                _backgroundLayers[3].setPosition({ -1.f * _backgroundLayers[3].getTextureSize().x ,0.f });
+                _backgroundLayers[3].setScrollSpeed(0.f);
             }
         }
 
 
-        totalXScrolled -= 200.f * dt_;
-        if (totalXScrolled < 0.f)
+
+        //if (_backgroundLayers[2].getPosition().x + 150.f * dt_ <= 0.f || totalXScrolled[2] - 200.f * dt_ > 0.f)
+        //{
+        //    _backgroundLayers[2].setScrollSpeed(0.75f * -200.f);
+        //}
+        //else
+        //{
+        //    if (totalXScrolled > 0.f)
+        //    {
+
+        //        _backgroundLayers[2].setPosition({ -1.f * _backgroundLayers[2].getTextureSize().x ,0.f });
+        //        _backgroundLayers[2].setScrollSpeed(0.75f * -200.f);
+
+        //    }
+        //    else
+        //    {
+        //        totalXScrolled = 0.f;
+        //        _backgroundLayers[2].setPosition({ 0.f,0.f });
+        //        _backgroundLayers[2].setScrollSpeed(0.f);
+
+        //    }
+        //    
+        //}
+
+        //if (_backgroundLayers[1].getPosition().x + 100.f * dt_ <= 0.f || totalXScrolled -200.f * dt_ > 0.f)
+        //{
+        //    _backgroundLayers[1].setScrollSpeed(.50f * -200.f);
+        //}
+        //else
+        //{
+        //    if (_backgroundLayers[1].getPosition().x + totalXScrolled < 0.f)
+        //    {
+
+        //        _backgroundLayers[1].setPosition({ -1.f * _backgroundLayers[1].getTextureSize().x ,0.f });
+        //        _backgroundLayers[1].setScrollSpeed(0.5f * -200.f);
+
+
+        //        totalXScrolled -= 200.f * dt_;
+        //    }
+        //    else
+        //    {
+        //        totalXScrolled = 0.f;
+        //        _backgroundLayers[1].setPosition({ 0.f,0.f });
+        //        _backgroundLayers[1].setScrollSpeed(0.f);
+
+        //    }
+        //}
+
+        //if (_backgroundLayers[0].getPosition().x + 50.f * dt_ <= 0 || totalXScrolled - 200.f * dt_ > 0.f)
+        //{
+        //    _backgroundLayers[0].setScrollSpeed(0.25f * -200.f);
+        //}
+        //else
+        //{
+        //    if (totalXScrolled > 0.f)
+        //    {
+
+        //        _backgroundLayers[0].setPosition({ -1.f * _backgroundLayers[0].getTextureSize().x ,0.f });
+        //        _backgroundLayers[0].setScrollSpeed(0.25f * -200.f);
+        //        totalXScrolled -= 200.f;
+
+        //    }
+        //    else
+        //    {
+        //        //totalXScrolled = 0.f;
+        //        _backgroundLayers[0].setPosition({ 0.f,0.f });
+        //        _backgroundLayers[0].setScrollSpeed(0.f);
+
+        //    }
+        //}
+
+
+       /* if (totalXScrolled < 0.f)
         {
             totalXScrolled = 0.f;
-        }
-        std::cout << std::to_string(totalXScrolled) << std::endl;
+        }*/
+        std::cout << std::to_string(totalXScrolled[0]) << std::endl;
 
             //_backgroundLayers[0].setScrollSpeed(0.25f * -200.f);
             //_backgroundLayers[1].setScrollSpeed(0.50f * -200.f);

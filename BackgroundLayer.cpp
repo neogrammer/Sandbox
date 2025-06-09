@@ -3,64 +3,71 @@
 #include "BackgroundLayer.h"
 #include "SandboxError.h"
 
-BackgroundLayer::BackgroundLayer(Cfg::Textures tex_, float scrollSpeed)
-    : _scrollSpeed(scrollSpeed), _offset(0.0f), _sprite{ Cfg::textures.get(tex_) } {
-   /* if (!_texture.loadFromFile(filename))
-    {
 
-        sbx::SandboxError("Unable to load texture file path : " + filename);
-    }*/
-}
-
-void BackgroundLayer::update(float dt) 
+void BackgroundLayer::checkBoundary()
 {
-    auto xFrameDisp = -_scrollSpeed * dt;
-    if (_sprite.getPosition().x + xFrameDisp < -1.f * _sprite.getTexture().getSize().x)
-        _sprite.setPosition({ 0.f,0.f});
-    else
-    {
-        _sprite.setPosition({ _sprite.getPosition().x + xFrameDisp, _sprite.getPosition().y });
-    }
+	if (movingLeft)
+	{
+		if (layerView.getCenter().x - 800.f < -1.f * mainSpr.getTexture().getSize().x)
+		{
+			auto gap = ((-1.f * mainSpr.getTexture().getSize().x) - (layerView.getCenter().x - 800.f));
+			layerView.setCenter({ 800.f - gap, 450.f });
+		}
+	}
+	else if (movingRight)
+	{
+		if (layerView.getCenter().x + 800.f >= mainSpr.getTexture().getSize().x)
+		{
+			auto gap = ((layerView.getCenter().x + 800.f) - (mainSpr.getTexture().getSize().x));
+			layerView.setCenter({ -800.f + gap, 450.f });
+		}
+	}
 }
 
-void BackgroundLayer::draw(sf::RenderWindow& window) {
-
-    if (&_sprite.getTexture() == &Cfg::textures.get(Cfg::Textures::UNKNOWN))
-    {
-        return;
-    }
-    else
-    {
-        window.draw(_sprite);
-        sf::Sprite tempSprite = _sprite;
-        tempSprite.setPosition({ _sprite.getPosition().x + _sprite.getTexture().getSize().x, 0.f});
-        window.draw(tempSprite);
-    }
-}
-
-void BackgroundLayer::setScrollSpeed(float spdX_, float spdY_)
+BackgroundLayer::BackgroundLayer(sf::RenderWindow& window_, Cfg::Textures tex_, float scrollModifier_)
+	: mainSpr{ Cfg::textures.get(tex_) }, secondarySpr{Cfg::textures.get(tex_)}
+	, layerView{ window_.getDefaultView() }
+	, scrollModifier{scrollModifier_}
 {
-    _scrollSpeed = spdX_;
-    (spdY_);
-    return;
+	mainSpr.setPosition({ 0.f,0.f });
+	secondarySpr.setPosition({ -1.f * mainSpr.getTexture().getSize().x, 0.f });
+	layerView.setCenter({ 800.f, 450.f });
 }
 
-sf::Vector2f BackgroundLayer::getPosition()
+void BackgroundLayer::update(float dt)
 {
-    return _sprite.getPosition();
+	
 }
 
-void BackgroundLayer::setPosition(sf::Vector2f pos_)
+
+
+void BackgroundLayer::draw(sf::RenderWindow& window) 
 {
-    _sprite.setPosition(pos_);
+	checkBoundary();
+
+	window.setView(layerView);
+	window.draw(secondarySpr);
+	window.draw(mainSpr);
 }
 
-sf::Vector2u BackgroundLayer::getTextureSize()
+void BackgroundLayer::move(sf::Vector2f disp_, float dt_)
 {
-    return _sprite.getTexture().getSize();
+	if (disp_.x > 0.f)
+	{
+		movingRight = true;
+		movingLeft = false;
+	}
+	else if (disp_.x < 0.f)
+	{
+		movingLeft = true;
+		movingRight = false;
+	}
+	else
+	{
+		movingLeft = false;
+		movingRight = false;
+	}
+	layerView.move((disp_ * scrollModifier) * dt_);
 }
 
-float BackgroundLayer::getScrollSpeed()
-{
-    return _scrollSpeed;
-}
+

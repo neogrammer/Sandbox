@@ -5,9 +5,11 @@
 #include "BackgroundLayer.h"
 #include <vector>
 #include "GameSTate.h"
-
-class SideScrollerPlayState : public GameState {
-	std::vector<float> totalXScrolled;
+#include "GameObject.h"
+class SideScrollerPlayState : public GameState 
+{
+	GameObject playerObj{ Cfg::Textures::CrashersPlayerSheet, {800.f,1200.f}, {0.f,0.f}, {0.f,0.f}, {228.f,150.f},{{0,0},{228,150}} };
+	std::vector<BackgroundLayer> bgLayers;
 public:
     SideScrollerPlayState(sf::RenderWindow& tv_);
     ~SideScrollerPlayState();
@@ -23,7 +25,4 @@ public:
 
 	void tickBegin() override;
 	void tickEnd(float dt_) override;
-
-private:
-    std::vector<BackgroundLayer> _backgroundLayers;
 };

@@ -139,8 +139,11 @@
     <ClCompile Include="AnimObject.cpp" />
     <ClCompile Include="BackgroundLayer.cpp" />
     <ClCompile Include="Cfg.cpp" />
+    <ClCompile Include="Foreground.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SandboxApp.cpp" />
@@ -160,10 +163,13 @@
     <ClInclude Include="BackgroundLayer.h" />
     <ClInclude Include="Cfg.h" />
     <ClInclude Include="DirType.h" />
+    <ClInclude Include="Foreground.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GStateType.h" />
+    <ClInclude Include="GUI.h" />
     <ClInclude Include="IKinematics.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceMgr.h" />
     <ClInclude Include="SandboxApp.h" />
@@ -214,6 +220,7 @@
     <Image Include="assets\textures\sandbox_play_state\7.png" />
     <Image Include="assets\textures\sandbox_play_state\8.png" />
     <Image Include="assets\textures\sandbox_side_scroller\bg.png" />
+    <Image Include="assets\textures\sandbox_side_scroller\player\playerSheet228x150.png" />
     <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layered.png" />
     <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_02.png" />
     <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_03.png" />

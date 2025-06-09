@@ -41,6 +41,8 @@ void Cfg::initTextures()
 	textures.load(Textures::Crash_Intro_1, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer1.png");
 	textures.load(Textures::Crash_Intro_2, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer2.png");
 	textures.load(Textures::Crash_Intro_3, "assets/textures/sandbox_side_scroller_play/BG_CrashersIntro_layer3.png");
+	textures.load(Textures::CrashersPlayerSheet, "assets/textures/sandbox_side_scroller/player/playerSheet228x150.png");
+
 
 
 	

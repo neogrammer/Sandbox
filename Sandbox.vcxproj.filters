@@ -28,6 +28,12 @@
     <Filter Include="assets\textures\sandbox_play_state">
       <UniqueIdentifier>{d847ea96-9dbf-47a8-bdd0-68df9031d9ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\textures\sandbox_side_scroller">
+      <UniqueIdentifier>{cf94038f-45bb-42d2-8957-0b47b99d8ff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures\sandbox_side_scroller\player">
+      <UniqueIdentifier>{974ced96-9b79-4917-8b28-7301d480a934}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -73,6 +79,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SideScrollerPlayState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Foreground.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -150,6 +168,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BackgroundLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Foreground.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -252,6 +279,39 @@
     </Image>
     <Image Include="assets\textures\sandbox_choice_state\face_choice_triggered.png">
       <Filter>assets\textures\sandbox_choice_state</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller\bg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layered.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_03.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_04.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\Background_Layer_05.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller_play\BG_CrashersIntro_layer3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\textures\sandbox_side_scroller\player\playerSheet228x150.png">
+      <Filter>assets\textures\sandbox_side_scroller\player</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
